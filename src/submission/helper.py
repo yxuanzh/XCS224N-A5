@@ -21,6 +21,7 @@ def initialize_rope_model(mconf, bottleneck_dim=32):
     ### [part h]: Make some other model here
 
     ### START CODE HERE
+    attention_model = GPT(mconf)
     ### END CODE HERE
     return attention_model
 
