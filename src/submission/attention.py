@@ -68,9 +68,7 @@ def apply_rotary_emb(x, rope_cache):
     ### [part h]
     ### START CODE HERE
     x_complex = torch.view_as_complex(torch.stack(x[:, 0:-1], x[:, 1:]))
-    print("x_complex", x_complex.shape)
     rotate_complex = torch.view_as_complex(torch.stack(rope_cache[:, :, 0], rope_cache[:, :, 1]))
-    print("rotate_complex", rotate_complex.shape)
     rotated_x = torch.view_as_real(x_complex * rotate_complex)
     ### END CODE HERE
     return rotated_x
