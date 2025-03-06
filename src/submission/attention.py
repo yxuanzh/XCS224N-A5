@@ -45,7 +45,7 @@ def precompute_rotary_emb(dim, max_positions):
     t_theta = torch.outer(torch.arange(max_positions), theta)
     cos_array = torch.cos(t_theta)
     sin_array = torch.sin(t_theta)
-    rope_cache = torch.movedim(torch.stack(cos_array, sin_array), 0, 2)
+    rope_cache = torch.movedim(torch.stack((cos_array, sin_array)), 0, 2)
     ### END CODE HERE
     return rope_cache
 
