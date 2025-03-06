@@ -129,8 +129,8 @@ class CausalSelfAttention(nn.Module):
             ### TODO:
             # [part h] Apply RoPE to the query and key.
             ### START CODE HERE
-            q = apply_rotary_emb(q, self.rope)
-            k = apply_rotary_emb(k, self.rope)
+            q = apply_rotary_emb(q, self.rope_cache)
+            k = apply_rotary_emb(k, self.rope_cache)
             ### END CODE HERE
 
         # causal self-attention; Self-attend: (B, nh, T, hs) x (B, nh, hs, T) -> (B, nh, T, T)
