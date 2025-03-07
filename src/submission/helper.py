@@ -136,7 +136,6 @@ def pretrain(pretrain_dataset, block_size, model, pretrain_lr=6e-3, writer=None)
         train_dataset = pretrain_dataset, 
         test_dataset = None,
         config = tconf)
-    trainer_obj.train()
     ### END CODE HERE
     return tconf, trainer_obj
 
